@@ -1,18 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-		<h1>Editing Car</h1>
+    <div class="col-md-12">
+      <p style="font-size: 200%">Edit Car</p> 
+      <%= render 'form' %>
+      <button type="submit" id="submit" class="btn btn-primary"><%= link_to '', cars_path %>Back</button> 
+      <button type="submit" id="submit" class="btn btn-primary"><%= link_to '', @car %>Show</button>
     </div>
-  </div>
-</div>   
-
-<%= render 'form' %>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-		<%= link_to 'Show', @car %> |
-		<%= link_to 'Back', cars_path %>
-    </div>
-  </div>
-</div>   
+  </div>    	
+</div> 

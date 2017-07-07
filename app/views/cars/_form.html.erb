@@ -1,74 +1,54 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="field">
-        <%= form_for(@car) do |f| %>
-          <% if @car.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
 
-              <ul>
-              <% @car.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-        </div>
+ <div class="form-group">
+  <%= form_for(@car, html: { multipart: true }) do |f| %>
+  <% if @car.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+    <ul>
+      <% @car.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
       <% end %>
-    </div>
+    </ul>
+
+    <% end %>
+  </div>  
+
+  <div class="form-group row">
+  <label for="make" class="col-2 col-form-label">Make:</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="Enter Car Make" id="make">
+  </div>
+  </div>
+
+<div class="form-group row">
+  <label for="model" class="col-2 col-form-label">Model:</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="Enter Car Model" id="model">
+  </div>
+  </div>
+
+<div class="form-group row">
+  <label for="color" class="col-2 col-form-label">Color:</label>
+  <div class="col-10">
+    <input class="form-control" type="text" value="Enter Car Color" id="color">
+  </div>
+  </div>
+
+<div class="form-group row">
+  <label for="year" class="col-2 col-form-label">Year:</label>
+  <div class="col-10">
+    <input class="form-control" type="number" value="2017" id="year">
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="field">
-        <%= f.label :make %><br>
-        <%= f.text_field :make %>
-      </div>
-    </div>
-  </div>
-</div>      
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">      
-      <div class="field">
-        <%= f.label :model %><br>
-        <%= f.text_field :model %>
-      </div>
-    </div>
-  </div>
-</div>      
-  
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="field">
-        <%= f.label :color %><br>
-        <%= f.text_field :color %>
-      </div>
-    </div>
-  </div>
+<div class="form-group row">
+    <label for="image" class="col-2 col-form-label">Add Image:</label>
+    <input type="file" class="form-control-file" id="image" aria-describedby="fileHelp">
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">      
-      <div class="field">
-        <%= f.label :year %><br>
-        <%= f.number_field :year %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">      
-      <div class="actions">
-        <%= f.submit %>
-      </div>
-    </div>
-  </div>
+<div class="form-group row">
+  <button type="submit" class="btn btn-primary">Submit</button> 
 </div>
 <% end %>
+

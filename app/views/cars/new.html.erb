@@ -1,19 +1,11 @@
+<form action="/cars" method="post">
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <h1>New Car</h1>
+    <div class="col-md-12">
+      <p style="font-size: 200%">New Car</p>
+      <%= render 'form' %>
+      <button type="submit" id="submit" class="btn btn-primary"><%= link_to '', cars_path %>Back</button> 
     </div>
   </div>
-</div>      
-
-
-<%= render 'form' %>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-		<%= link_to 'Back', cars_path %>
-    </div>
-  </div>
-</div>  
+</div>    
+</form>

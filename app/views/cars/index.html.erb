@@ -10,24 +10,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-1">Make</div>
-    <div class="col-md-1">Model</div>
-    <div class="col-md-1">Color</div>
-    <div class="col-md-1">Year</div>
-  </div>
-</div>  
-
-<div class="container">
-  <div class="row">
     <% @cars.each do |car| %>
-      <div class="col-md-1"><%= car.make %></div>
-      <div class="col-md-1"><%= car.model %></div>
-      <div class="col-md-1"><%= car.color %></div>
-      <div class="col-md-1"><%= car.year %></div>
-      <div class="col-md-1"><%= link_to 'Show', car %></div>
-      <div class="col-md-1"><%= link_to 'Edit', edit_car_path(car) %></div>
-      <div class="col-md-1"><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-      <div class="col-md-5"></div>
+      <a class="thumbnail" href=" <%= car_path(car) %>"><div class="col-md-3"></div><img class="img-responsive"><%= image_tag car.image.url(:medium)%></a>
+      <div class="col-md-1"></div>
     <% end %>
   </div>
 </div>  

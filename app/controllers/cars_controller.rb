@@ -4,12 +4,13 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.order(:make)
   end
 
   # GET /cars/1
   # GET /cars/1.json
   def show
+    @cars = Car.find(params[:id])
   end
 
   # GET /cars/new
@@ -24,7 +25,7 @@ class CarsController < ApplicationController
   # POST /cars
   # POST /cars.json
   def create
-    @car = Car.new(car_params)
+    @car = Car.new(params[:car])
 
     respond_to do |format|
       if @car.save
@@ -41,7 +42,7 @@ class CarsController < ApplicationController
   # PATCH/PUT /cars/1.json
   def update
     respond_to do |format|
-      if @car.update(car_params)
+      if @car.update(params[:car])
         format.html { redirect_to @car, notice: 'Car was successfully updated.' }
         format.json { render :show, status: :ok, location: @car }
       else
@@ -69,6 +70,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:make, :model, :color, :year)
+      params.require(:car).permit(:make, :model, :color, :year, :image)
     end
 end
