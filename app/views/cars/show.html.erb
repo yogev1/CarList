@@ -36,8 +36,26 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-		<%= link_to 'Edit', edit_car_path(@car) %> |
-		<%= link_to 'Back', cars_path %>
+      <% if current_user %>
+
+    		<div class="col-10">
+          <a class="btn btn-primary" href="<%= edit_car_path(@car) %>" role="button">Edit</a>
+        </div> | 
+
+        <div class="col-10">
+          <a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+        </div>  
+
+      <% else %>
+
+       <div class="col-10">
+          <a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+        </div><br/> 
+        
+        <div class="col-md-12">
+          <h4>Please Log In before trying to make changes</h4>
+        </div>
+      <% end %>  
     </div>  
   </div>
 </div> 

@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
-
+  skip_before_filter :verify_authenticity_token 
   # GET /cars
   # GET /cars.json
   def index
@@ -25,7 +25,7 @@ class CarsController < ApplicationController
   # POST /cars
   # POST /cars.json
   def create
-    @car = Car.new(params[:car])
+    @car = Car.new(car_params)
 
     respond_to do |format|
       if @car.save
@@ -41,8 +41,9 @@ class CarsController < ApplicationController
   # PATCH/PUT /cars/1
   # PATCH/PUT /cars/1.json
   def update
+
     respond_to do |format|
-      if @car.update(params[:car])
+      if @car.update(car_params)
         format.html { redirect_to @car, notice: 'Car was successfully updated.' }
         format.json { render :show, status: :ok, location: @car }
       else
