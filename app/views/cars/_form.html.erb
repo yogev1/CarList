@@ -31,7 +31,7 @@
   <div class="form-group">
     <label for="color" class="col-2 col-form-label">Color:</label>
     <div class="col-10">
-      <%= f.text_field :color, class: "form-control", placeholder: "Enter car color" %>
+      <%= f.select(:color_type, options_for_select([['Red', 'Red'], ['Blue', 'Blue'], ['Black', 'Black'], ['White', 'White'], ['Green', 'Green'], ['Yellow', 'Yellow'], ['Grey', 'Grey'], ['Silver', 'Silver']])) %>
     </div>
   </div>
 

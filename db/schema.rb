@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708225003) do
+ActiveRecord::Schema.define(version: 20170710204430) do
 
   create_table "cars", force: :cascade do |t|
     t.string   "make"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170708225003) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "color_type"
   end
 
   create_table "users", force: :cascade do |t|
