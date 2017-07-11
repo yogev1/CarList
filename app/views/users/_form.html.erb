@@ -11,27 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <label for="name" class="col-4 col-form-label">Name:</label>
+      <div class="col-10">
+        <%= f.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+      </div>
   </div>
+ 
+  
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="form-group">
+    <label for="email" class="col-4 col-form-label">Email:</label>
+      <div class="col-10">
+        <%= f.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+      </div>
   </div>
+  
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="form-group">
+    <label for="password" class="col-2 col-form-label">Password:</label>
+      <div class="col-10">
+        <%= f.password_field :password, class: "form-control", placeholder: "Enter Password" %>
+      </div>
   </div>
+  
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+  <div class="form-group">
+    <label for="password_confirmation" class="col-4 col-form-label">Retype Password:</label>
+      <div class="col-10">
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Retype Password"  %>
+      </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="form-group">
+    <div class="col-10">
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </div> 
   </div>
 <% end %>

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   		session[:user_id] = user.id
   		redirect_to root_path
   	else 
-  		redirect_to root_path, notice: 'Your credintials do not fit our records'
+  		redirect_to root_path, notice: 'Your credintials do not fit our records, Please sign up or try again'
   	end	
   end
 

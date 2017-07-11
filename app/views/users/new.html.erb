@@ -1,7 +1,10 @@
 <div class="container">
-	<h1>New User</h1>
+  <div class="col-10">
+    <p style="font-size: 200%">New User</p>
 
 	<%= render 'form', user: @user %>
 
-	<%= link_to 'Back', users_path %>
+	<div class="col-10">
+     	<a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+    </div>
 </div>
