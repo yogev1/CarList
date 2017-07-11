@@ -11,7 +11,7 @@
 		<div class="row" style="padding-top: 30px">
 			<div class="col-10">
 				<% if current_user %>
-					You are loggen in as: <%= current_user.name %>
+					You are logged in as: <%= current_user.name %>
 					<%= link_to 'Log Out', logout_path %>
 				<% else %>
 					<%= link_to 'Sign Up', signup_path %> Or 
