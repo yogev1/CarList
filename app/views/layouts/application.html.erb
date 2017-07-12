@@ -6,9 +6,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+
 	<div class="container">
 		<% if user_signed_in? %>
+
 			<div class="form-group" style="padding-top: 30px">
 	    	<div class="col-10">
 					<p>Hello <%= current_user.name %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
@@ -17,19 +20,25 @@
 
 		<% else %>
 	
-		<div class="form-group" style="padding-top: 30px">
-	    <div class="col-10">
-				<p>Please <%= link_to "Sign In", new_user_session_path %> Or <%= link_to "Sign Up", new_user_registration_path %> Before trying to make changes</p>
+		<div class="form-group row" style="padding-top: 30px">
+	    <div class="col-1-sm">
+				<p>Please <a class="btn btn-info btn-sm" href="<%= new_user_session_path %>" role="button">Sign In </a>
+      </div> Or
+    	  
+    	<div class="col-1-sm"><a class="btn btn-info btn-sm" href="<%= new_user_registration_path %>" role="button"> Sign Up</a> Before trying to make changes</p>
 	    </div>
 	  </div>
 
-	<% end %> 
+		<% end %> 
 	
-
-		<p class="notice"><%= notice %></p>
-  	<p class="alert"><%= alert %></p>
-
-	</div>	
+		<div class="form-group">
+	  	<div class="col-10">
+				<p class="notice"><%= notice %></p>
+	  		<p class="alert"><%= alert %></p>
+			</div>
+		</div>
+	</div>
+		
 	<%= yield %>
 
 </body>
