@@ -7,19 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
-		<div class="row" style="padding-top: 30px">
-			<div class="col-10">
-				<% if current_user %>
-					You are logged in as: <%= current_user.name %>
-					<a class="btn btn-primary" href="<%= logout_path %>" role="button">Log Out</a>
-				<% else %>
-					<a class="btn btn-primary" href="<%= signup_path %>" role="button">Sign Up</a> Or 
-					<a class="btn btn-primary" href="<%= login_path %>" role="button">Log In</a>
-				<% end %>
-			</div>	
-		</div>		
-	</div></br>
+
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+	
 	<%= yield %>
 
 </body>

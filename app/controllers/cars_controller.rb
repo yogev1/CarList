@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :verify_authenticity_token 
+  before_action :authenticate_user! 
   # GET /cars
   # GET /cars.json
   def index

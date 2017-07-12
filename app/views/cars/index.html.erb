@@ -1,12 +1,8 @@
 <form role="form">
   <div class="container">
-    <div class="col-10">
-      <p id="notice"><%= notice %></p>
-    </div>
       
     <h1>Listing Cars</h1><br/>
 
-       <% if current_user %>
         <div class="form-group">
           <div class="row">
             <div class="col-10">
@@ -15,18 +11,6 @@
           </div>
         </div>
 
-      <% else %>
-
-      <div class="form-group">
-        <div class="row">
-          <div class="col-10">
-            <h3>Please Log In before trying to make changes</h3>
-          </div>
-        </div>
-      </div>
-
-      <% end %> 
-      
       <div class="form-group">
         <div class="row">
           <% @cars.each do |car| %>
