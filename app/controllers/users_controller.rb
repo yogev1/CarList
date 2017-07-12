@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
   
+  protect_from_forgery prepend: true
+  before_action :authenticate_user!
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
   # GET /users
   # GET /users.json
   def index
