@@ -2,15 +2,8 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy] 
   # GET /cars
   # GET /cars.json
-  def index
-    
-    # if user_signed_in?
-    #   redirect_to root_path
-    # else 
-    #   redirect_to new_user_session_path
-    # end     
+  def index     
     @cars = Car.order(:make)
-    
   end
 
   # GET /cars/1
@@ -32,6 +25,7 @@ class CarsController < ApplicationController
   # POST /cars.json
   def create
     @car = Car.new(car_params)
+    @car.user_id = current_user.id
 
     respond_to do |format|
       if @car.save
