@@ -1,0 +1,63 @@
+<div class="container">
+
+<div class="form-group">
+  <div class="col-10">
+    <p style="font-size: 200%">Log In:</p>
+  </div>
+</div>
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  
+  <div class="form-group">
+    <label for="name" class="col-2 col-form-label">User Name:</label>
+    <div class="col-10">
+      <%= text_field_tag :name %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="email" class="col-2 col-form-label">Email:</label>
+    <div class="col-10">
+      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter Email" %>
+    </div>  
+  </div>
+    
+  <div class="form-group">
+    <label for="password" class="col-2 col-form-label">Password:</label>
+    <div class="col-10">
+      <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Enter Password" %>  
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <div class="col-10">
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-10">
+        <input class="btn btn-primary" type="submit" value="Log In">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-10">  
+      <a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-10">  
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+
+  <% end %>
+</div>
