@@ -10,11 +10,12 @@
 <body>
 
 	<div class="container">
+
 		<% if user_signed_in? %>
 
 			<div class="form-group" style="padding-top: 30px">
 	    	<div class="col-10">
-					<p>Hello <%= current_user.name %> - <a class="btn btn-info btn-sm" href="#" role="button">Sign Out </a></p>
+					<p>Hello <%= current_user.name %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></p>
 	    	</div>
 	  	</div>
 
