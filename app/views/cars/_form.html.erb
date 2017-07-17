@@ -1,4 +1,4 @@
-<%= form_for(@car) do |f| %>
+<%= nested_form_for(@car) do |f| %>
 
   <div class="form-group">
   <% if @car.errors.any? %>
@@ -43,15 +43,15 @@
   </div>
 
   <div class="form-group">
-    <label for="image" class="col-2 col-form-label">Add Image:</label>
-    <div class="col-10">
-      <%= f.file_field :image, class: "form-control"%>
-    </div>
-  </div>
+    <%= f.fields_for :car_images do |image_form| %>
+      <%= image_form.file_field :image %>
+      <%= image_form.link_to_remove "Remove this Image" %>
+    <% end %>
+    <p><%= f.link_to_add "Add an Image", :car_images %></p>
+  </div> 
 
-  <div class="form-group">
-    <div class="col-10">
+  <div class="form-group row">
+    
       <input class="btn btn-primary" type="submit" value="Submit">
-    </div> 
-  </div>
+ 
 <% end %>

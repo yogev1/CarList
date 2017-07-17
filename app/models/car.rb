@@ -1,4 +1,14 @@
 class Car < ActiveRecord::Base
-	has_attached_file :image, styles: { large: "500x500>", medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
-  	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+	
+  	belongs_to :user
+  	has_many :car_images, :dependent => :destroy
+  	accepts_nested_attributes_for :car_images, :reject_if => :all_blank, :allow_destroy => true
+
+  	def main_image
+  		 car_images.first.image
+  	end
+
+  	def all_image
+  		car_images.all
+  	end
 end

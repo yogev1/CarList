@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get 'signup', to: 'users#sign_up', as: 'signup'
   # get 'login', to: 'sessions#new', as: 'login'
   # get 'logout', to: 'sessions#destroy', as: 'logout'
-
+  resources :searches
   resources :users
   resources :cars
   root 'cars#index'

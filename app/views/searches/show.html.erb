@@ -1,0 +1,34 @@
+<body class="terms">
+<div class="container">
+  <div class="text-center" class="row align-items-start pad">
+    <h1>Search Results</h1>
+  </div>
+</div>
+
+	<% if @search.search_terms.empty? %>
+		
+		<div class="container">
+		  <div class="text-center" class="row align-items-start pad">
+		    <h3 class="highlight">No records found!</h3>
+		  </div>
+		</div>
+	<% else %>
+
+		<div class="container">
+		  <div class="text-center" class="row align-items-start pad">
+		    <% @search.search_terms.each do |c| %>
+		    <h1 class="pad highlight"><%= c.name %></h1>
+      		<p class="pad">Category : <%= c.category %></p>
+      		<p class="pad">Team : <%= c.team %></p>
+		  </div>
+		</div>
+
+		<div class="container">
+		  <div class="text-center" class="row align-items-start pad">
+		    <h3><%= link_to 'Back', new_search_path%></h3>
+		  </div>
+		</div>
+
+  <% end %>
+ <% end %>
+</body>

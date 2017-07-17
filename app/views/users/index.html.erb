@@ -19,21 +19,24 @@
       <% @users.each do |user| %>
           <div class="col-1"><%= user.name %></div>
           <div class="col-2"><%= user.email %></div>
+          
           <div class="col-1">
             <a class="btn btn-primary btn-sm" href="<%= user_path(user) %>" role="button">Show</a> 
           </div>
+          
           <div class="col-1">
             <a class="btn btn-primary btn-sm" href="<%= edit_user_path(user) %>" role="button">Edit</a> 
           </div>
-          <div class="col-1"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-          <div class="col-6"></div></br>
+          
+          <div class="col-1">
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
+          </div>
+          <div class="col-6"></div>
       <% end %>
   </div>
 
-  <div class="form-group row">
-    <div class="col-2">
-      <a class="btn btn-primary" href="<%= new_user_path %>" role="button">New User</a> 
-    </div>
-  </div> 
+  <a class="btn btn-primary" href="<%= new_user_path %>" role="button">New User</a> 
+ 
+  <a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
 
 </div>
