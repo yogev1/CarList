@@ -3,8 +3,12 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index     
+     @cars = Car.all
+  if params[:search]
+    @cars = Car.search(params[:search]).order(:make)
+  else
     @cars = Car.order(:make)
-    # @cars = Car.search(params[:search])
+  end
   end
 
   # GET /cars/1

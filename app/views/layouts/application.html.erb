@@ -13,31 +13,32 @@
 
 		<% if user_signed_in? %>
 
-			<div class="form-group" style="padding-top: 30px">
+			<div style="padding-top: 30px">
 	    	<div class="col-10">
-					<p>Hello <%= current_user.name %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete', class: "btn btn-info btn-sm" %></p>
+					<p>Hello <%= current_user.name %> : <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete', class: "btn btn-info btn-sm" %></p>
 	    	</div>
 	  	</div>
 
 		<% else %>
 	
-		<div class="form-group row" style="padding-top: 30px">
-	    <div class="col-1-sm">
-				<p>Please <a class="btn btn-info btn-sm" href="<%= new_user_session_path %>" role="button">Sign In </a>
-      </div> Or
-    	  
-    	<div class="col-1-sm"><a class="btn btn-info btn-sm" href="<%= new_user_registration_path %>" role="button"> Sign Up</a> Before trying to make changes</p>
-	    </div>
-	  </div>
+			<div class="row" style="padding-top: 30px">
+		    
+		    <div class="col-1-sm">
+					<p>Please <a class="btn btn-info btn-sm" href="<%= new_user_session_path %>" role="button">Sign In </a>
+	      </div> Or
+	    	  
+	    	<div class="col-1-sm"><a class="btn btn-info btn-sm" href="<%= new_user_registration_path %>" role="button"> Sign Up</a> Before trying to make changes</p>
+		    </div>
 
-		<% end %> 
-	
-		<div class="form-group">
-	  	<div class="col-10">
-				<p class="notice"><%= notice %></p>
-	  		<p class="alert"><%= alert %></p>
-			</div>
-		</div>
+		  </div>
+
+		<% end %> 	
+
+	  <div class="col-10">
+			<p class="notice"><%= notice %></p>
+  		<p class="alert"><%= alert %></p>
+  	</div>
+
 	</div>
 
 	<%= yield %>

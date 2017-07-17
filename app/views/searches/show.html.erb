@@ -1,34 +1,31 @@
-<body class="terms">
+
 <div class="container">
-  <div class="text-center" class="row align-items-start pad">
+  <div class="text-center">
     <h1>Search Results</h1>
   </div>
-</div>
 
-	<% if @search.search_terms.empty? %>
+	<% if @search.search_cars.empty? %>
 		
-		<div class="container">
-		  <div class="text-center" class="row align-items-start pad">
-		    <h3 class="highlight">No records found!</h3>
-		  </div>
-		</div>
+		<div class="text-center">
+	    <h3 class="highlight">No records found!</h3>
+	  </div>
+
 	<% else %>
 
-		<div class="container">
-		  <div class="text-center" class="row align-items-start pad">
-		    <% @search.search_terms.each do |c| %>
-		    <h1 class="pad highlight"><%= c.name %></h1>
-      		<p class="pad">Category : <%= c.category %></p>
-      		<p class="pad">Team : <%= c.team %></p>
-		  </div>
+		<div align="center">
+		  <% @search.search_cars.each do |c| %>
+		   	<p class="text-center">Make : <%= c.make %></p>
+      		<p class="text-center">Model : <%= c.model %></p>
+      		<p class="text-center">Color : <%= c.color %></p>
+      		<p class="text-center">Year : <%= c.year %></p>
+      		<p class="thumbnail col-md-4"><%= image_tag c.main_image.url(:medium), height: "80%", width: "80%", class: "img-responsive" %></p>
+      	  <% end %>	
 		</div>
+		
+		<center><div class="col-md-1">
+ 	  	<a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+ 		</div></center>
 
-		<div class="container">
-		  <div class="text-center" class="row align-items-start pad">
-		    <h3><%= link_to 'Back', new_search_path%></h3>
-		  </div>
-		</div>
-
-  <% end %>
  <% end %>
-</body>
+
+</div>

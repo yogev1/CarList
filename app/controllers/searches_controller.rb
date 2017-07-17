@@ -5,18 +5,18 @@ class SearchesController < ApplicationController
 	end
 
 	def create
-	    @search = Search.create(search_params)
-	    redirect_to @search
+	  @search = Search.create(search_params)
+	  redirect_to @search
 	end
 	
 	def show
-	  @search = Search.find(params[:id])
+	  @search = Search.search(params[:search])
 	end
 	
 	private
 
 	  def search_params
-	    params.require(:search).permit(:make, :model, :year)
+	    params.require(:search).permit(:make, :model, :color, :year)
 	  end
 
 end
