@@ -5,12 +5,41 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- daterange Required Prerequisites -->
+
+	  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+	<!-- including daterangepicker -->	
+
+		<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+		
+
+	<!-- Latest compiled and minified CSS -->
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+	
+	<!-- adding daterangepicker ability -->
+	<script>
+		$('input[name="daterange"]').daterangepicker();
+	</script>
 
+	<!-- Main -->
 	<div class="container">
-
 		<% if user_signed_in? %>
 
 			<div style="padding-top: 30px">
@@ -20,25 +49,20 @@
 	  	</div>
 
 		<% else %>
-	
+
 			<div class="row" style="padding-top: 30px">
-		    
 		    <div class="col-1-sm">
 					<p>Please <a class="btn btn-info btn-sm" href="<%= new_user_session_path %>" role="button">Sign In </a>
-	      </div> Or
-	    	  
+	      </div> Or  
 	    	<div class="col-1-sm"><a class="btn btn-info btn-sm" href="<%= new_user_registration_path %>" role="button"> Sign Up</a> Before trying to make changes</p>
 		    </div>
-
 		  </div>
-
 		<% end %> 	
 
 	  <div class="col-10">
-			<p class="notice"><%= notice %></p>
+		<p class="notice"><%= notice %></p>
   		<p class="alert"><%= alert %></p>
   	</div>
-
 	</div>
 
 	<%= yield %>

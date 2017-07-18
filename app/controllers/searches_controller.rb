@@ -10,13 +10,13 @@ class SearchesController < ApplicationController
 	end
 	
 	def show
-	  @search = Search.search(params[:search])
+	  @search = Search.search_cars(params[:search])
 	end
 	
 	private
 
 	  def search_params
-	    params.require(:search).permit(:make, :model, :color, :year)
+	    params.require(:search).permit(:make, :model, :color, :start_year, :end_year)
 	  end
 
 end
