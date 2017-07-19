@@ -23,14 +23,24 @@
 
   <!--  generating car grid -->
       
-  <div class="row">
+  <div class="row" style="font-family: Serif">
     <% @cars.each do |car| %>
-        <a class="thumbnail col-md-4" href="<%= car_path(car) %>"><%= image_tag car.main_image.url(:medium), height: "80%", width: "80%", class: "img-responsive" %></a>
+      <a class="thumbnail col-md-4"  style="text-decoration: none" href="<%= car_path(car) %>"><%= image_tag car.main_image.url(:medium), class: "img-responsive" %>
+        <div class="col-md-12" align="center">  
+          <h4><%= car.year %>
+          <%= car.make %>
+          <%= car.model %></h4>
+        </div>
+        <div class="col-md-12" align="center"> 
+            <h4>More Details</h4>
+        </div> 
+      </a>
     <% end %>
   </div>  
 
-  <!-- create search query -->
+  <!-- create advanced search query -->
   
-    <%= render 'search' %>
-   
+    <div align="center">
+      <%= link_to "Advanced Search", new_search_path, class: "btn btn-info"%>
+    </div>
 </div> 

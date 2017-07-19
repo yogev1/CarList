@@ -4,7 +4,7 @@
       
       <!-- Wrapper for images -->
 
-        <div class="col-md-12" align="center"><%= image_tag @car.main_image.url(:medium), class: "img-responsive" %>
+        <div class="thumbnail col-md-12" align="center"><%= image_tag @car.main_image.url(:medium), class: "img-responsive" %>
         </div>   
 
     <% else %>  
@@ -21,10 +21,10 @@
          
         <% @car.car_images.each_with_index do |car_image, index| %>
           <% if index == 0 %>
-            <div class="item active col-md-4"><%= image_tag car_image.image.url(:medium), class: "img-responsive, carousel-inner"%>
+            <div class="item active col-md-4 thumbnail"><%= image_tag car_image.image.url(:medium), class: "img-responsive, carousel-inner"%>
             </div>  
           <% else %>
-            <div class="item col-md-4"><%= image_tag car_image.image.url(:medium), class: "img-responsive, carousel-inner"%>
+            <div class="item col-md-4 thumbnail"><%= image_tag car_image.image.url(:medium), class: "img-responsive, carousel-inner"%>
             </div>  
           <% end %>     
   

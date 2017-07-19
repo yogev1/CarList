@@ -29,43 +29,29 @@
 	<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+
 </head>
 
 <body>
-	
-	<!-- adding daterangepicker ability -->
-	<script>
-		$('input[name="daterange"]').daterangepicker();
-	</script>
 
-	<!-- Main -->
 	<div class="container">
-		<% if user_signed_in? %>
+		<!-- render navbar -->
 
-			<div style="padding-top: 30px">
-	    	<div class="col-10">
-					<p>Hello <%= current_user.name %> : <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete', class: "btn btn-info btn-sm" %></p>
-	    	</div>
-	  	</div>
+		<%= render 'cars/header' %>
+		<!-- adding daterangepicker ability -->
 
-		<% else %>
+		<script>
+			$('input[name="daterange"]').daterangepicker();
+		</script>
 
-			<div class="row" style="padding-top: 30px">
-		    <div class="col-1-sm">
-					<p>Please <a class="btn btn-info btn-sm" href="<%= new_user_session_path %>" role="button">Sign In </a>
-	      </div> Or  
-	    	<div class="col-1-sm"><a class="btn btn-info btn-sm" href="<%= new_user_registration_path %>" role="button"> Sign Up</a> Before trying to make changes</p>
-		    </div>
-		  </div>
-		<% end %> 	
+		<div class="col-10">
+			<p class="notice"><%= notice %></p>
+	  	<p class="alert"><%= alert %></p>
+	 	</div>
 
-	  <div class="col-10">
-		<p class="notice"><%= notice %></p>
-  		<p class="alert"><%= alert %></p>
-  	</div>
 	</div>
-
-	<%= yield %>
+	
+		<%= yield %>
 
 </body>
 </html>
