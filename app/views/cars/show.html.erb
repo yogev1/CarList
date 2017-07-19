@@ -1,18 +1,35 @@
 <div class="container">
+  
+  <!-- car header -->
+  
   <div class="row">
-    <% if @car.car_images.count == 1 %>
-      
-      <!-- Wrapper for images -->
+      <h2>
+        <%= @car.year %>
+        <%= @car.make %>
+        <%= @car.model %>
+        <%= @car.color_type %>
+      </h2>
+  </div>
 
-        <div class="thumbnail col-md-12" align="center"><%= image_tag @car.main_image.url(:medium), class: "img-responsive" %>
+
+
+  <div class="row tag">
+    <% if @car.car_images.count == 1 %>
+      <div class="col-md-12">
+      <!-- Wrapper for images -->
+        
+        <div class="col-md-6">
+          <%= render 'detail_card' %>
+        </div>  
+        <div class="col-md-6" align="center"><%= image_tag @car.main_image.url(:medium), class: "img-responsive thumbnail", height: "90%", width: "90%" %>
         </div>   
 
     <% else %>  
        <!--  Image carousel -->
 
-      <div id="myCarousel" class="carousel slide col-md-12" data-ride="carousel">
+      <div id="myCarousel" role = "navigation" class="carousel slide col-md-12" data-ride="carousel">
 
-          <!-- Indicators -->
+        <!-- Indicators -->
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -41,32 +58,8 @@
           </a>
       </div>  
     <% end %> 
-  </div>
+
         
-    
-  <div class="row">
-    <div class="col-md-12" align="center">
-      <p>
-        <strong>Make:</strong>
-        <%= @car.make %>
-      </p>
-
-      <p>
-        <strong>Model:</strong>
-        <%= @car.model %>
-      </p>
-      
-      <p>
-        <strong>Color:</strong>
-        <%= @car.color_type %>
-      </p>
-
-      <p>
-        <strong>Year:</strong>
-        <%= @car.year %>
-      </p>
-    </div>
-  </div>
 
 <!--   Buttons if user_signed_in? -->
 
@@ -83,5 +76,6 @@
         <a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
       <% end %>
     <% end %>
-  </div>  
+  </div> 
+</div> 
 </div> 
