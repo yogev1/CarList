@@ -16,8 +16,9 @@
       <a class="navbar-brand" href="<%= root_path %>">CarList</a>
       <ul class="nav navbar-nav" style="display: inline">
         <li><a class="navbar-brand" href="<%= root_path %>">Cars</a></li>
-        <li><a class="navbar-brand" href="<%= new_car_path %>">Add New Car</a></li>
-
+        <% if current_user %>
+          <li><a class="navbar-brand" href="<%= new_car_path %>">Add New Car</a></li>
+        <% end %>
              <!--  generate search query -->
 
         <li><form class="navbar-form" align="center">

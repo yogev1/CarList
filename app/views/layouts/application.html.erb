@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <!-- daterange Required Prerequisites -->
+  <!-- daterangepicker Required Prerequisites -->
 
 	  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
 		<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -37,21 +37,19 @@
 	<div class="container">
 		<!-- render navbar -->
 
-		<%= render 'cars/header' %>
+			<%= render 'cars/header' %>
 		<!-- adding daterangepicker ability -->
 
 		<script>
 			$('input[name="daterange"]').daterangepicker();
 		</script>
-
-		<div class="col-10">
-			<p class="notice"><%= notice %></p>
-	  	<p class="alert"><%= alert %></p>
-	 	</div>
+		
+		<p class="notice"><%= notice %></p>
+      	<p class="alert"><%= alert %></p>
 
 	</div>
-	
-		<%= yield %>
 
+	<%= yield %>
+		      
 </body>
 </html>
