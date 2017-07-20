@@ -61,8 +61,12 @@ body {
 .tag {
     background-color: #D3D3D3;
     margin-bottom: 2px;
-    padding: 5px 10px 5px 10px; 
+    padding: 5px 10px 5px 10px;
+    width: 100vw;
+    position: absolute;
+    left: 1%;
 }
 .shadow {
     box-shadow: 10px 10px 5px grey;
+    
 }
