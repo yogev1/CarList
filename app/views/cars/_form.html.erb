@@ -1,40 +1,39 @@
 
 <%= bootstrap_nested_form_for(@car) do |f| %>
 
-  <div class="form-group">
-    <% if @car.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+<div class="form-group">
+  <% if @car.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
 
-      <ul>
-        <% @car.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
+    <ul>
+      <% @car.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
 
     <% end %>
   </div>  
   
- 
-    <%= f.text_field :make, class: "form-control", placeholder: "Enter car make" %>
-    <%= f.text_field :model, class: "form-control", placeholder: "Enter car model" %>
-    <%= f.select(:color_type, options_for_select([['Red', 'Red'], ['Blue', 'Blue'], ['Black', 'Black'], ['White', 'White'], ['Green', 'Green'], ['Yellow', 'Yellow'], ['Grey', 'Grey'], ['Silver', 'Silver']])) %>
-    <%= f.text_field :year, class: "form-control", placeholder: "Enter Year" %>
-    <%= f.text_field :description, class: "form-control", placeholder: "Enter Description" %>
-    <%= f.text_field :price, class: "form-control", placeholder: "Enter Price" %>
-    <%= f.select(:condition, options_for_select([['Excellent', 'Excellent'], ['Good', 'Good'], ['Fair', 'Fair'], ['Poor', 'Poor']])) %>
 
-    <%= f.fields_for :car_images do |image_form| %>
-      <%= image_form.file_field :image %>
-      <%= image_form.link_to_remove "Remove this Image" %>
-    <% end %>
-    <p><%= f.link_to_add "Add an Image", :car_images %></p>
+  <%= f.text_field :make, class: "form-control", placeholder: "Enter car make" %>
+  <%= f.text_field :model, class: "form-control", placeholder: "Enter car model" %>
+  <%= f.select(:color_type, options_for_select([['Red', 'Red'], ['Blue', 'Blue'], ['Black', 'Black'], ['White', 'White'], ['Green', 'Green'], ['Yellow', 'Yellow'], ['Grey', 'Grey'], ['Silver', 'Silver']])) %>
+  <%= f.text_field :year, class: "form-control", placeholder: "Enter Year" %>
+  <%= f.text_field :description, class: "form-control", placeholder: "Enter Description" %>
+  <%= f.text_field :price, class: "form-control", placeholder: "Enter Price" %>
+  <%= f.select(:condition, options_for_select([['Excellent', 'Excellent'], ['Good', 'Good'], ['Fair', 'Fair'], ['Poor', 'Poor']])) %>
+  <%= f.fields_for :car_images do |image_form| %>
+  <%= image_form.file_field :image %>
+  <%= image_form.link_to_remove "Remove this Image" %>
+  <% end %>
+  <p><%= f.link_to_add "Add an Image", :car_images %></p>
 
   <div class="row">
-      <div class="col-md-1">
-        <input class="btn btn-primary" type="submit" value="Submit">
-      </div>
-   
+    <div class="col-md-1">
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
 
 
-<% end %>
+
+    <% end %>

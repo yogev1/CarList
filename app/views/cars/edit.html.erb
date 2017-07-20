@@ -1,17 +1,17 @@
 <div class="container">
-  <div class="col-10">
-  	<p style="font-size: 200%">Edit Car</p> 
+	<div class="col-10">
+		<p style="font-size: 200%">Edit Car</p> 
 
-    <%= render 'form' %>
-      
-	    <div class="col-md-1">
-	 	  	<a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
-	 	</div>
- 		
+		<%= render 'form' %>
+		
+		<div class="col-md-1">
+			<a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+		</div>
+		
 
-		 <div class="col-md-1">
-		 	<%= link_to 'Delete', @car, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-		 </div>
-	 </div>
-  </div>   	
+		<div class="col-md-1">
+			<%= link_to 'Delete', @car, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+		</div>
+	</div>
+</div>   	
 </div> 

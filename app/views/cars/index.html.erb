@@ -8,38 +8,38 @@
   
   <div class="row">  
     <% if current_user %>
-      <div class="col-md-1">
-        <p class="text-center"><a class="btn btn-primary" href="<%= new_car_path %>" role="button">Add New Car</a></p>
-      </div>
+    <div class="col-md-1">
+      <p class="text-center"><a class="btn btn-primary" href="<%= new_car_path %>" role="button">Add New Car</a></p>
+    </div>
 
     <% else %>
 
-      <div class="col-md-12"> 
-        <h4 style="color: red" align="center">Please sign in before trying to add\edit cars!</h4>
-      </div>
+    <div class="col-md-12"> 
+      <h4 style="color: red" align="center">Please sign in before trying to add\edit cars!</h4>
+    </div>
     <% end %>  
   </div>
 
   <!--  generating car grid -->
-      
+  
   <div class="row" style="font-family: Serif">
     <% @cars.each do |car| %>
-      <a class="thumbnail col-md-4"  style="text-decoration: none" href="<%= car_path(car) %>"><%= image_tag car.main_image.url(:medium), class: "img-responsive" %>
-        <div class="col-md-12" align="center">  
-          <h4><%= car.year %>
+    <a class="thumbnail col-md-4"  style="text-decoration: none" href="<%= car_path(car) %>"><%= image_tag car.main_image.url(:medium), class: "img-responsive" %>
+      <div class="col-md-12" align="center">  
+        <h4><%= car.year %>
           <%= car.make %>
           <%= car.model %></h4>
         </div>
         <div class="col-md-12" align="center"> 
-            <h4>More Details</h4>
+          <h4>More Details</h4>
         </div> 
       </a>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
-  <!-- create advanced search query -->
-  
+    <!-- create advanced search query -->
+    
     <div align="center">
       <%= link_to "Advanced Search", new_search_path, class: "btn btn-info"%>
     </div>
-</div> 
+  </div> 
