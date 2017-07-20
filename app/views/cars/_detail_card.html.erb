@@ -1,27 +1,15 @@
 <div class="container" style="background-color: #F5F5DC">
 	<div class="container shadow">
 		<div class="row">	
-			<h4>MSRP: <span style="color: grey">$41,995 - $43,995</span></h4>
+			<h4>Description: <span style="color: grey"><%= @car.description %></span></h4>
 		</div>
 		<hr class="small">
 		<div class="row">
-			<h4>Body Style: <span style="color: grey">Sport Utility</span></h4>
+			<h4>Price: <span style="color: grey"><%= @car.price %></span></h4>
 		</div>
 		<hr class="small">
 		<div class="row">
-			<h4>Combined MPG: <span style="color: grey">24</span></h4>
-		</div>
-		<hr class="small">
-		<div class="row">
-			<h4>Engine: <span style="color: grey">280-hp, 2.0-liter I-4 (premium)</span></h4>
-		</div>
-		<hr class="small">
-		<div class="row">
-			<h4>Drivetrain:  <span style="color: grey">All-wheel Drive</span></h4>
-		</div>
-		<hr class="small">
-		<div class="row">
-			<h4>Seats: <span style="color: grey">5</span></h4>
+			<h4>Car Condition: <span style="color: grey"><%= @car.condition %></span></h4>
 		</div>
 	</div>	
 </div>
