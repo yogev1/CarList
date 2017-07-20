@@ -10,7 +10,7 @@ class SearchesController < ApplicationController
 	end
 	
 	def show
-	  @search = Search.search_cars(params[:search])
+	 
 	end
 	
 	private
