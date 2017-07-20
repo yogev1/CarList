@@ -103,7 +103,7 @@ Rails.application.configure do
     bucket: ENV.fetch('carlist1'),
     access_key_id: ENV.fetch('AKIAJD7RXCOMSD36TNOA'),
     secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('US_WEST'),
+    s3_region: ENV.fetch('us-west-2'),
   }
 }
 end
