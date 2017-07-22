@@ -36,19 +36,19 @@
       <% if user_signed_in? %>
 
 
-      <form class="navbar-form navbar-right">
+      <form class="navbar-form">
         <p style="color: white">Hello <%= current_user.name %> : <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete', class: "btn btn-success" %></p>
       </form>
 
       <% else %>
 
-      <form class="navbar-form navbar-right" style="color: white">
-        <div class="form-group">
+      <div class="navbar-form navbar-right" style="color: white">
+        <div>
           <a class="btn btn-success" href="<%= new_user_session_path %>" role="button">Please Sign In </a>
           OR 
           <a class="btn btn-success" href="<%= new_user_registration_path %>" role="button"> Sign Up</a>
         </div>  
-      </form>
+      </div>
       <% end %>
     </div><!--/.navbar-collapse --> 
   </div><!-- /.container-fluid -->  

@@ -1,12 +1,12 @@
 class Search < ApplicationRecord
 
-  def self.search_cars(search)
+  def search_cars
     
 		cars = Car.all
-	    cars = cars.where(["make LIKE ?","%#{make}%"]) if make.present?
-	    cars = cars.where(["model LIKE ?","%#{model}%"]) if model.present?
-	    cars = cars.where(["color_type LIKE ?","%#{color_type}%"]) if color_type.present?
-	   	cars = cars.where(["start_year LIKE ?" > "%#{start_year}%"] && ["end_year LIKE ?" < "%#{end_year}%"]) 
+	    cars = cars.where(make: make) if make.present?
+	    cars = cars.where(model: model) if model.present?
+	    cars = cars.where(color_type: color) if color.present?
+	   	cars = cars.where(["year BETWEEN ? AND ?", start_year, end_year]) if start_year && end_year
     return cars
   end
 

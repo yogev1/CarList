@@ -45,17 +45,18 @@
               <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
 
+          <!-- multiple images - the first one is active -->
+          <div class="carousel-inner" role="listbox">
             <% @car.car_images.each_with_index do |car_image, index| %>
-            <% if index == 0 %>
-            <div class="item active col-md-4 thumbnail"><%= image_tag car_image.image.url(:medium), class: "img-responsive, carousel-inner"%>
-            </div>  
-            <% else %>
-            <div class="item col-md-4 thumbnail"><%= image_tag car_image.image.url(:medium), class: "img-responsive, carousel-inner"%>
-            </div>  
-            <% end %>     
-
+              <% if index == 0 %>
+                <div class="item active thumbnail"><%= image_tag car_image.image.url(:medium), class: "img-responsive"%>
+                </div>  
+              <% else %>
+                <div class="item thumbnail"><%= image_tag car_image.image.url(:medium), class: "img-responsive"%>
+                </div>  
+              <% end %>     
             <% end %>
-
+          </div>
             <!-- Carousel Controls -->
 
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
