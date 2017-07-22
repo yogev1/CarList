@@ -21,20 +21,20 @@
 
       <!-- Wrapper for images -->
 
-      <div class="col-md-6 col-xs-6">
+      <div class="col-md-6">
         <%= render 'detail_card' %>
       </div>  
-      <div class="col-md-6 col-xs-6" align="center"><%= image_tag @car.main_image.url(:medium), class: "img-responsive thumbnail", height: "90%", width: "90%" %>
+      <div class="col-md-6" align="center"><%= image_tag @car.main_image.url(:medium), class: "img-responsive thumbnail", height: "90%", width: "90%" %>
       </div>   
 
       <% else %>  
       <!--  Image carousel -->
 
       <div class="col-md-12">
-        <div class="col-md-6 col-xs-6">
+        <div class="col-md-6">
           <%= render 'detail_card' %>
         </div>
-        <div class="col-md-6 col-xs-6">
+        <div class="col-md-6">
           <div id="myCarousel" role = "navigation" class="carousel slide col-md-12" data-ride="carousel">
 
             <!-- Indicators -->
