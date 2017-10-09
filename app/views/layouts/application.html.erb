@@ -38,24 +38,9 @@
 
 </head>
 
-<body>
-
-	<div class="container">
-		<!-- render navbar -->
-
-		<%= render 'cars/header' %>
-		<!-- adding daterangepicker ability -->
-
-		<script>
-		$('input[name="daterange"]').daterangepicker();
-		</script>
-		
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
-	</div>
-
+<body style="background-color: #E8E8E8">
+	<%= render 'layouts/navbar' %>
 	<%= yield %>
-	
+	<%= render 'layouts/footer' %>
 </body>
 </html>

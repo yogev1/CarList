@@ -1,15 +1,33 @@
-<div class="container" style="background-color: #F5F5DC">
-	<div class="container shadow">
-		<div class="row">	
-			<h4>Description: <span style="color: grey"><%= @car.description %></span></h4>
+<div class="panel shadow">
+  <div class="panel-heading text-center" style="background-color: #B0C4DE">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>
+          <%= @car.year %>
+          <%= @car.make %>
+          <%= @car.model %>
+          <%= @car.color_type %>
+        </h2>
+      </div>  
+    </div>
+  </div>
+	<div class="container shadow" style="background-color: #E8E8E8">
+		<div class="row">
+			<div class="col-md 12">	
+			  <h4>Description: <span style="color: grey"><%= @car.description %></span></h4>
+      </div>
 		</div>
 		<hr class="small">
 		<div class="row">
-			<h4>Price: $<span style="color: grey"><%= @car.price %></span></h4>
+      <div class="col-md 12">
+			  <h4>Price: $<span style="color: grey"><%= @car.price %></span></h4>
+      </div>
 		</div>
 		<hr class="small">
 		<div class="row">
-			<h4>Car Condition: <span style="color: grey"><%= @car.condition %></span></h4>
+      <div class="col-md 12">
+			  <h4>Car Condition: <span style="color: grey"><%= @car.condition %></span></h4>
+      </div>  
 		</div>
 	</div>	
 </div>

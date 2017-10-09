@@ -1,51 +1,26 @@
-<div class="container">
-
-  <!-- car header -->
-  
-  <div class="row">
-    <div class="col-md-4">
-      <h2>
-        <%= @car.year %>
-        <%= @car.make %>
-        <%= @car.model %>
-        <%= @car.color_type %>
-      </h2>
-    </div>  
-  </div>
-
-
-
+<div class="container" style="margin-top: 4%">
   <div class="row tag">
     <% if @car.car_images.count == 1 %>
     <div class="col-md-12">
-
-      <!-- Wrapper for images -->
-
-      <div class="col-md-6">
+      <div class="col-md-6" style="padding-top: 5%">
         <%= render 'detail_card' %>
       </div>  
       <div class="col-md-6" align="center"><%= image_tag @car.main_image.url(:medium), class: "img-responsive thumbnail", height: "90%", width: "90%" %>
       </div>   
-
       <% else %>  
       <!--  Image carousel -->
-
       <div class="col-md-12">
         <div class="col-md-6">
           <%= render 'detail_card' %>
         </div>
         <div class="col-md-6">
           <div id="myCarousel" role = "navigation" class="carousel slide col-md-12" data-ride="carousel">
-
             <!-- Indicators -->
-
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
-
-          <!-- multiple images - the first one is active -->
           <div class="carousel-inner" role="listbox">
             <% @car.car_images.each_with_index do |car_image, index| %>
               <% if index == 0 %>
@@ -58,7 +33,6 @@
             <% end %>
           </div>
             <!-- Carousel Controls -->
-
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
@@ -70,9 +44,7 @@
             </a>
           </div>  
           <% end %>
-
           <!-- edit button if signed in  -->
-
           <div align="center">   
             <% if current_user && @car.user_id == current_user.id %>
             <a class="btn btn-primary" href="<%= edit_car_path(@car) %>" role="button">Edit</a>
