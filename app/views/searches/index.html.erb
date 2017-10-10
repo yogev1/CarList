@@ -1,0 +1,31 @@
+
+<div class="container">
+	<div class="text-center">
+		<h1>Search Results</h1>
+	</div>
+
+	<% if !@cars %>
+	
+	<div class="text-center">
+		<h3 class="highlight">No records found!</h3>
+	</div>
+
+	<% else %>
+
+	<div align="center">
+		<% @cars.each do |c| %>
+		<p class="text-center">Make : <%= c.make %></p>
+		<p class="text-center">Model : <%= c.model %></p>
+		<p class="text-center">Color : <%= c.color %></p>
+		<p class="text-center">Year : <%= c.year %></p>
+		<p class="thumbnail col-md-4"><%= image_tag c.main_image.url(:medium), height: "80%", width: "80%", class: "img-responsive" %></p>
+		<% end %>	
+	</div>
+	
+	<center><div class="col-md-1">
+		<a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+	</div></center>
+
+	<% end %>
+
+</div>

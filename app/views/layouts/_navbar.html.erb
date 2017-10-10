@@ -18,14 +18,14 @@
         <li><a class="navbar-brand" href="<%= new_car_path %>">Add New Car</a></li>
         <% end %>
         <!--  generate search query -->
-        <li><form class="navbar-form">
-          <div class="form-group col-md-12">
+        <li>
+          <div class="col-md-12 navbar-form">
             <%= form_tag cars_path ,method: 'get' do %>
               <%= text_field_tag :search , params[:search], placeholder: "Search Cars", class: "form-control" %>
               <%= submit_tag "Search Cars", :name => nil, class:"btn btn-success"%>
             <% end %>
           </div>
-        </form></li>
+        </li>
       </ul>
       <!--  user authentication -->
       <% if user_signed_in? %>

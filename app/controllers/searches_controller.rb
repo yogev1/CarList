@@ -1,14 +1,9 @@
 class SearchesController < ApplicationController
-
+	
+  def index
+    @cars = Car.advanced_search(params[:make],params[:model],params[:color],params[:start_year],params[:end_year])
+	end
 	def new
-	  @search = Search.new
-	end
-	def create
-	  @search = Search.create(search_params)
-	  redirect_to @search
-	end
-	def show
-	  @search = Car.find(params[:id])	
 	end
 	
 	private

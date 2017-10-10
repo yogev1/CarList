@@ -36,16 +36,6 @@ ActiveRecord::Schema.define(version: 20170720005859) do
     t.string   "condition"
   end
 
-  create_table "searches", force: :cascade do |t|
-    t.string   "make"
-    t.string   "model"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "color"
-    t.integer  "start_year"
-    t.integer  "end_year"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "password_digest"

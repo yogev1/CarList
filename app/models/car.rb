@@ -1,20 +1,22 @@
 class Car < ActiveRecord::Base
     
-    belongs_to :user
-  	has_many :car_images, :dependent => :destroy
-  	accepts_nested_attributes_for :car_images, :reject_if => :all_blank, :allow_destroy => true
+  belongs_to :user
+  has_many :car_images, :dependent => :destroy
+  accepts_nested_attributes_for :car_images, :reject_if => :all_blank, :allow_destroy => true
 
-  	def main_image
-  		 car_images.first.image
-  	end
+  def main_image
+    car_images.first.image
+  end
 
-  	def all_image
-  		car_images.all
-  	end
+  def all_image
+    car_images.all
+  end
 
-  	def self.search(search)
-  		where("make LIKE ? OR model LIKE ? OR color_type LIKE ? OR year LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
-  	end
+  def self.search(search)
+    where("make LIKE ? OR model LIKE ? OR color_type LIKE ? OR year LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
+  end
 
-    has_many :searches
+  def self.advanced_search(make,model,color_type,start_year,end_year)
+    where("make LIKE ? OR model LIKE ? OR color_type LIKE ? OR [year BETWEEN ? AND ?, start_year, end_year]", "%#{make}%", "%#{model}%", "%#{color_type}%", "%#{start_year}%", "%#{end_year}%") 
+  end
 end

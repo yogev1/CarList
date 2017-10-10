@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
@@ -7,17 +6,18 @@
   </div>
   <div class="row">
     <div class="col-md-6"> 
-      <%= bootstrap_form_for @search, html: {class: "pure-form"} do |s| %>
-        <%= s.text_field :make %>
-        <%= s.text_field :model%>
-        <%= s.text_field :color%>
+      <%= bootstrap_form_tag(url: searches_path, method: :get) do |f| %>
+        <%= f.text_field :make, placeholder: "Make" %>
+        <%= f.text_field :model, placeholder: "Model" %>
+        <%= f.text_field :color, placeholder: "Color" %>
     </div>
-    <div class="col-md-6"></div>
+    <div class="col-md-6">
+    </div>
     <div class="col-md-3">        
-        <%= s.select(:start_year, 1940..2017) %>
-        <%= s.select(:end_year, 1940..2017) %>
-        <%= s.submit "search", class: "btn btn-primary", style: "padding: 5px 70px; font-size: 120%" %>
+        <%= f.select(:start_year, 1940..2017) %>
+        <%= f.select(:end_year, 1940..2017) %>
+        <%= submit_tag "search", class: "btn btn-primary", style: "padding: 5px 70px; font-size: 120%" %>
+      <% end %>        
     </div>  
   </div>
-      <%end%>
 </div>
