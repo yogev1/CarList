@@ -17,18 +17,22 @@
   <!--  generating car grid --> 
   <div class="row">
     <% @cars.each do |car| %>
-    <a class="panel panel-primary col-md-4" style="text-decoration: none" href="<%= car_path(car) %>">
-      <div class="panel-body" align="center"><%= image_tag car.main_image.url, class: "img-responsive thumbnail", style: "height: 200px; width: 300px" %>
+    <div class="col-md-4">
+    <div class="panel panel-primary">
+      <a style="text-decoration: none" href="<%= car_path(car) %>">
+        <div class="panel-body" align="center"><%= image_tag car.main_image.url, class: "img-responsive thumbnail", style: "height: 200px; width: 300px" %>
+        </div>  
+        <div class="panel-footer text-center">  
+          <h4><%= car.year %>
+            <%= car.make %>
+            <%= car.model %></h4>
+            <p> 
+              <h4>Click For More Details</h4>
+            </p>
+          </div>
+        </a>
+      </div>
       </div>  
-      <div class="col-md-12 panel-footer" align="center">  
-        <h4><%= car.year %>
-          <%= car.make %>
-          <%= car.model %></h4>
-        </div>
-        <div class="col-md-12" align="center"> 
-          <h4>More Details</h4>
-        </div> 
-      </a>
       <% end %>
     </div>
     <!-- create advanced search query -->

@@ -1,7 +1,8 @@
 class Search < ApplicationRecord
 
+  belongs_to :car
+
   def search_cars
-    
 		cars = Car.all
 	    cars = cars.where(make: make) if make.present?
 	    cars = cars.where(model: model) if model.present?
@@ -9,5 +10,4 @@ class Search < ApplicationRecord
 	   	cars = cars.where(["year BETWEEN ? AND ?", start_year, end_year]) if start_year && end_year
     return cars
   end
-
 end

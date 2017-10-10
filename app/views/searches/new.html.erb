@@ -1,55 +1,23 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12" align="center">
+    <div class="col-md-12 text-center">
       <h1>Advanced search</h1>
     </div> 
   </div>
-
-  <%= form_for @search, html: {class: "pure-form"} do |s| %>
-
-  <div class="form-group">
-    <div class="row">
-      <div class="col-md-1">
-        <label for="make" class="col-form-label">Make:</label>
+  <div class="row">
+    <div class="col-md-6"> 
+      <%= bootstrap_form_for @search, html: {class: "pure-form"} do |s| %>
         <%= s.text_field :make %>
-      </div>
-    </div>  
-    
-    <div class="row">
-      <div class="col-md-1">
-        <label for="model" class="col-form-label">Model:</label>
         <%= s.text_field :model%>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-1">
-        <label for="color" class="col-form-label">Color:</label>
         <%= s.text_field :color%>
-      </div>  
     </div>
-
-    <div class="row">
-      <div class="col-md-2">
-        <label for="start_year" class="col-form-label">Start Year:</label>
+    <div class="col-md-6"></div>
+    <div class="col-md-3">        
         <%= s.select(:start_year, 1940..2017) %>
-        <label for="end_year" class="col-form-label">End Year:</label>
         <%= s.select(:end_year, 1940..2017) %>
-      </div>  
-    </div>
-
-    <div class="row">
-      <div class="col-md-1">
-        <%= s.submit "search", class: "btn btn-primary" %>
-      </div>  
-    </div>
-    <%end%>
-
-    
-    <div class="row">
-      <div class="col-md-1">
-        <a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a> 
-      </div> 
-    </div> 
+        <%= s.submit "search", class: "btn btn-primary", style: "padding: 5px 70px; font-size: 120%" %>
+    </div>  
   </div>
+      <%end%>
+</div>

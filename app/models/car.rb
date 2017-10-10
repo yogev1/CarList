@@ -15,4 +15,6 @@ class Car < ActiveRecord::Base
   	def self.search(search)
   		where("make LIKE ? OR model LIKE ? OR color_type LIKE ? OR year LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
   	end
+
+    has_many :searches
 end
