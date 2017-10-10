@@ -2,60 +2,60 @@
   <div class="row tag">
     <% if @car.car_images.count == 1 %>
     <div class="col-md-12">
-      <div class="col-md-6" style="padding-top: 5%">
+      <div class="col-md-6">
         <%= render 'detail_card' %>
       </div>  
-      <div class="col-md-6" align="center"><%= image_tag @car.main_image.url(:medium), class: "img-responsive thumbnail", height: "90%", width: "90%" %>
+      <div class="col-md-6" align="center" style="margin-bottom: 50px"><%= image_tag @car.main_image.url(:medium), class: "img-responsive", height: "300px", width: "400px" %>
       </div>   
-      <% else %>  
+    <% else %>  
       <!--  Image carousel -->
       <div class="col-md-12">
         <div class="col-md-6">
           <%= render 'detail_card' %>
         </div>
         <div class="col-md-6">
-          <div id="myCarousel" role = "navigation" class="carousel slide col-md-12" data-ride="carousel">
+          <div id="myCarousel" role = "navigation" class="carousel slide carousel-fade" data-ride="carousel" style="max-height: 200px">
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
-          <div class="carousel-inner" role="listbox">
-            <% @car.car_images.each_with_index do |car_image, index| %>
-              <% if index == 0 %>
-                <div class="item active thumbnail"><%= image_tag car_image.image.url(:medium), class: "img-responsive"%>
-                </div>  
-              <% else %>
-                <div class="item thumbnail"><%= image_tag car_image.image.url(:medium), class: "img-responsive"%>
-                </div>  
-              <% end %>     
-            <% end %>
-          </div>
+            <div class="carousel-inner" role="listbox">
+              <% @car.car_images.each_with_index do |car_image, index| %>
+                <% if index == 0 %>
+                  <div class="item active" align="center"><%= image_tag car_image.image.url(:medium), class: "img-responsive", style: "max-height: 200px" %>
+                  </div>  
+                <% else %>
+                  <div class="item" align="center"><%= image_tag car_image.image.url(:medium), class: "img-responsive", style: "min-height: 200px" %>
+                  </div>  
+                <% end %>     
+              <% end %>
+            </div>
             <!-- Carousel Controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-
             <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
-          </div>  
-          <% end %>
+          </div><br><br>  
+        </div>  
+      <% end %>
           <!-- edit button if signed in  -->
           <div align="center">   
             <% if current_user && @car.user_id == current_user.id %>
-            <a class="btn btn-primary" href="<%= edit_car_path(@car) %>" role="button">Edit</a>
-            <a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+            <a class="btn btn-primary" href="<%= edit_car_path(@car) %>" role="button" style="padding: 6px 70px; font-size: 120%">Edit</a>
+            <a class="btn btn-primary" href="<%= root_path %>" role="button" style="padding: 6px 70px; font-size: 120%">Back</a>
             <% else %>
             <% if current_user %>
-            <h4 style="color: red">You can only edit and delete cars you created!</h4>
-            <a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+            <h4 style="color: #A52A2A; font-weight: bold">You can only edit and delete cars you created.</h4><br>
+            <a class="btn btn-primary" href="<%= root_path %>" role="button" style="padding: 6px 70px; font-size: 120%">Back</a>
             <% else %>
-            <h4 style="color: red">Please sign in before trying to add\edit cars!</h4>
-            <a class="btn btn-primary" href="<%= root_path %>" role="button">Back</a>
+            <h4 style="color: #A52A2A; font-weight: bold">Please sign in before trying to add\edit cars!</h4><br>
+            <a class="btn btn-primary" href="<%= root_path %>" role="button" style="padding: 6px 70px; font-size: 120%">Back</a>
             <% end %>
             <% end %>
           </div> 

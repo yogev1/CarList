@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>	
-	<!-- AWS usage -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 	<title>CarList</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -38,9 +38,11 @@
 
 </head>
 
-<body style="background-color: #E8E8E8">
+<body class="font" style="background-color: #E8E8E8">
 	<%= render 'layouts/navbar' %>
-	<%= yield %>
+	<div style="margin-bottom: 200px">
+		<%= yield %>
+	</div>
 	<%= render 'layouts/footer' %>
 </body>
 </html>

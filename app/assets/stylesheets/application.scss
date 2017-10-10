@@ -69,15 +69,16 @@ body {
     left: 1%;
 }
 .shadow {
-    box-shadow: 10px 10px 5px grey; 
+  box-shadow: 10px 10px 5px grey; 
 }
 
-footer{
+.footer{
     height: auto;
     position: fixed;
     width: auto;
     bottom: 0;
     z-index:999;
+    margin-top: 100px;
 }
 .footerHeader{
     width:100%;

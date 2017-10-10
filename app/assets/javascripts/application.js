@@ -19,5 +19,9 @@
 //= require jquery_nested_form
 
 $(function(){
-  $('#myCarousel').carousel();
+  	//Variables on page load 
+	var $('#myCarousel').carousel();,
+		$firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+	$myCarousel.carousel('cycle');
+	interval: 1000
 });

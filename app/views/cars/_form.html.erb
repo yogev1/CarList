@@ -1,21 +1,16 @@
 
 <%= bootstrap_nested_form_for(@car) do |f| %>
-
 <div class="form-group">
   <% if @car.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
-
     <ul>
       <% @car.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
     </ul>
-
     <% end %>
-  </div>  
-  
-
+  </div>   
   <%= f.text_field :make, class: "form-control", placeholder: "Enter car make" %>
   <%= f.text_field :model, class: "form-control", placeholder: "Enter car model" %>
   <%= f.select(:color_type, options_for_select([['Red', 'Red'], ['Blue', 'Blue'], ['Black', 'Black'], ['White', 'White'], ['Green', 'Green'], ['Yellow', 'Yellow'], ['Grey', 'Grey'], ['Silver', 'Silver']])) %>
@@ -33,7 +28,4 @@
     <div class="col-md-1">
       <input class="btn btn-primary" type="submit" value="Submit">
     </div>
-
-
-
-    <% end %>
+<% end %>
