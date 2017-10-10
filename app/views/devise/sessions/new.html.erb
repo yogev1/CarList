@@ -8,7 +8,7 @@
       <% if devise_mapping.rememberable? -%>
         <%= f.check_box :remember_me %>
       <% end %>
-      <input class="btn btn-primary" type="submit" value="Log In" style="padding: 6px 90px; font-size: 120%"><br><br>  
+      <%= f.submit "Log In", class: "btn btn-primary", style: "padding: 6px 90px; font-size: 120%" %><br><br>  
       <a class="btn btn-primary" href="<%= new_password_path(resource_name) %>" role="button" style="padding: 6px 30px; font-size: 120%">Forgot Your Password</a>
     </div>
   <% end %>
