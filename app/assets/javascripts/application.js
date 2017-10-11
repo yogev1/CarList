@@ -20,7 +20,7 @@
 
 $(function(){
   	//Variables on page load 
-	$('#myCarousel').carousel();,
+	$('#myCarousel').carousel();
 	//$firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
 	//$myCarousel.carousel('cycle');
 	//interval: 1000
