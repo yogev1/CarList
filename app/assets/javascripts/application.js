@@ -23,5 +23,5 @@ $(function(){
 	var $('#myCarousel').carousel();,
 		$firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
 	$myCarousel.carousel('cycle');
-	interval: 1000
+	//interval: 1000
 });
