@@ -17,6 +17,6 @@ class Car < ActiveRecord::Base
   end
 
   def self.advanced_search(make,model,color_type,start_year,end_year)
-    where("make LIKE ? OR model LIKE ? OR color_type LIKE ? OR [year BETWEEN ? AND ?, start_year, end_year]", "%#{make}%", "%#{model}%", "%#{color_type}%", "%#{start_year}%", "%#{end_year}%") 
+    where("make LIKE ? AND model LIKE ? AND color_type LIKE ? AND (year BETWEEN ? AND ?)", "%#{make}%", "%#{model}%", "%#{color_type}%", start_year, end_year) 
   end
 end
