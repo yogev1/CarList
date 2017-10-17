@@ -1,8 +1,8 @@
-class SearchesController < ApplicationController
-	
+class SearchesController < ApplicationController	
   def index
     @cars = Car.advanced_search(params[:make],params[:model],params[:color],params[:start_year],params[:end_year])
 	end
+  
 	def new
 	end
 	

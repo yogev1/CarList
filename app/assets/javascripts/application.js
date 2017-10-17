@@ -18,10 +18,11 @@
 //= require bootstrap-sprockets
 //= require jquery_nested_form
 
-$(function(){
-  	//Variables on page load 
+$(function(){ 
 	$('#myCarousel').carousel();
-	//$firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
-	//$myCarousel.carousel('cycle');
-	//interval: 1000
 });
+
+var http = require("http");
+setInterval(function() {
+    http.get("http://yogevfine.herokuapp.com");
+}, 50000);
