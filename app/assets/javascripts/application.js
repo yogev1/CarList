@@ -24,5 +24,5 @@ $(function(){
 
 var http = require("http");
 setInterval(function() {
-    http.get("http://yogevfine.herokuapp.com");
+    http.get("http://carlist.herokuapp.com");
 }, 50000);
