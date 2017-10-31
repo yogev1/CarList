@@ -22,7 +22,6 @@ $(function(){
 	$('#myCarousel').carousel();
 });
 
-var http = require("http");
 setInterval(function() {
     http.get("http://carlist.herokuapp.com");
 }, 50000);
